@@ -3,6 +3,7 @@ from transformers import TextDataset, DataCollatorForLanguageModeling
 import os
 
 # file_path = os.getenv('PROJECT_ROOT', '/llm_finetune/fintune_dataset.txt')
+# Change the file path to your dataset path
 file_path = "/Users/roland/code/llama3_finetune_inference/llm_finetune/finetune_dataset.txt"
 model_name = 'meta-llama/Meta-Llama-3-8B-Instruct'
 
