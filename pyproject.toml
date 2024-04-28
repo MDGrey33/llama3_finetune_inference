@@ -15,6 +15,8 @@ tf-keras = "^2.16.0"
 sentencepiece = "^0.2.0"
 accelerate = "^0.29.3"
 gpt-2-simple = "^0.8.1"
+deepspeed = "^0.14.2"
+datasets = "^2.19.0"
 
 
 [tool.poetry.group.dev.dependencies]
