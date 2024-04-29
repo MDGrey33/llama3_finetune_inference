@@ -5,7 +5,7 @@ import os
 project_root = os.getenv('PROJECT_ROOT')
 
 # Construct the model path using the project root
-model_path = os.path.join(project_root, 'llm_finetune', 'trained_model_v1')
+model_path = os.path.join(project_root, 'llm_finetune', '/Users/roland/code/llama3_finetune_inference/trained_model')
 
 # Load the tokenizer and model from the fine-tuned checkpoint
 tokenizer = transformers.AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B-Instruct")
@@ -21,7 +21,8 @@ pipeline = transformers.pipeline(
 
 messages = [
     {"role": "system", "content": "You are a smart, and helpful AI assistant, you will do everything you can to help."},
-    {"role": "user", "content": "Tell me what you know about Nur AI the software and Roland Abou Younes its creator, be precise and factual, only share what you are certain of."},
+    # {"role": "user", "content": "Tell me what you know about Nur AI the software and Roland Abou Younes its creator, be precise and factual, only share what you are certain of."},
+{"role": "user", "content": "Tell me the history of Nur as a software solution, how the features came abaout chronologically if you can reference code and commit ids."},
 ]
 
 
@@ -31,7 +32,7 @@ prompt_text = " ".join([f"{msg['role']}: {msg['content']}" for msg in messages])
 # Generate output using the pipeline
 outputs = pipeline(
     prompt_text,
-    max_length=500,  # Reduced max_length to limit verbosity and encourage precision
+    max_length=1500,  # Reduced max_length to limit verbosity and encourage precision
     truncation=True,
     num_return_sequences=1,
     temperature=0.2,  # Lower temperature to reduce randomness and increase predictability
