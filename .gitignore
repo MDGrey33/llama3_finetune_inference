@@ -163,4 +163,5 @@ cython_debug/
 /llm_finetune/
 /.idea/
 /logs/
-/llm_finetune/trained_model_v1/
+/trained_model_v1/
+/trained_model/
